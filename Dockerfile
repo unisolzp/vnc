@@ -16,7 +16,7 @@ RUN echo "alpine ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 RUN echo "alpine:alpine" | /usr/sbin/chpasswd
 RUN chown -R alpine:alpine /home/alpine
 
-COPY ./etc /etc
+COPY ./supervisord.conf /etc/
 EXPOSE 3389 3033 5900 8124 6080
 
 CMD /usr/bin/supervisord -c /etc/supervisord.conf
